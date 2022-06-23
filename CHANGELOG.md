@@ -28,7 +28,7 @@ Special thanks to [@tim-soft](https://github.com/tim-soft) for this awesome [PR]
 
 - Default preset is stored separately so that it can be reapplied after changing to other presets
 - All built-in react-dat-gui components now accept className and style props
-- All built-in react-dat-gui components can now have a labelWidth prop which can override the <DatGUI labelWidth> container prop and in any valid CSS units
+- All built-in react-dat-gui components can now have a labelwidth prop which can override the <DatGUI labelwidth> container prop and in any valid CSS units
 - Automatically include styles, no longer require importing external stylesheet
 - Add linting and precommit scripts that run prettier, eslint and stylelint over the codebase
 

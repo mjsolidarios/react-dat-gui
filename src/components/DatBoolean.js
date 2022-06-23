@@ -11,8 +11,8 @@ export default class DatBoolean extends Component {
     data: PropTypes.object.isRequired,
     path: PropTypes.string,
     label: PropTypes.string,
-    labelWidth: PropTypes.string.isRequired,
-    _onUpdateValue: PropTypes.func.isRequired
+    labelwidth: PropTypes.string.isRequired,
+    _onupdatevalue: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -42,24 +42,24 @@ export default class DatBoolean extends Component {
 
   handleChange = event => {
     const value = event.target.checked;
-    const { _onUpdateValue, path } = this.props;
+    const { _onupdatevalue, path } = this.props;
 
-    _onUpdateValue(path, value);
+    _onupdatevalue(path, value);
   };
 
   render() {
-    const { path, label, labelWidth, className, style } = this.props;
+    const { path, label, labelwidth, className, style } = this.props;
     const labelText = isString(label) ? label : path;
 
     return (
       <li className={cx('cr', 'boolean', className)} style={style}>
         <label>
-          <span className="label-text" style={{ width: labelWidth }}>
+          <span className="label-text" style={{ width: labelwidth }}>
             {labelText}
           </span>
           <span
             className="checkbox-container"
-            style={{ width: `calc(100% - ${labelWidth})` }}
+            style={{ width: `calc(100% - ${labelwidth})` }}
           >
             <input
               type="checkbox"

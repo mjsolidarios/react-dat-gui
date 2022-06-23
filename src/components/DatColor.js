@@ -12,8 +12,8 @@ export default class DatColor extends Component {
     data: PropTypes.object.isRequired,
     path: PropTypes.string,
     label: PropTypes.string,
-    labelWidth: PropTypes.string.isRequired,
-    _onUpdateValue: PropTypes.func.isRequired
+    labelwidth: PropTypes.string.isRequired,
+    _onupdatevalue: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -54,9 +54,9 @@ export default class DatColor extends Component {
 
   handleChangeColor = color => {
     const value = isString(color) ? color : color.hex;
-    const { _onUpdateValue, path } = this.props;
+    const { _onupdatevalue, path } = this.props;
 
-    _onUpdateValue(path, value);
+    _onupdatevalue(path, value);
   };
 
   renderPicker() {
@@ -78,7 +78,7 @@ export default class DatColor extends Component {
   }
 
   render() {
-    const { path, label, labelWidth, className, style } = this.props;
+    const { path, label, labelwidth, className, style } = this.props;
     const { value } = this.state;
     const labelText = isString(label) ? label : path;
 
@@ -88,13 +88,13 @@ export default class DatColor extends Component {
         style={{ borderLeftColor: `${value}`, ...style }}
       >
         <label>
-          <span className="label-text" style={{ width: labelWidth }}>
+          <span className="label-text" style={{ width: labelwidth }}>
             {labelText}
           </span>
           <div
             style={{
               backgroundColor: value,
-              width: `calc(100% - ${labelWidth})`
+              width: `calc(100% - ${labelwidth})`
             }}
           >
             <div

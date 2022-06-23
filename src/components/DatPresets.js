@@ -14,8 +14,8 @@ export default class DatPresets extends Component {
     path: PropTypes.string,
     label: PropTypes.string.isRequired,
     options: PropTypes.array.isRequired,
-    labelWidth: PropTypes.string.isRequired,
-    liveUpdate: PropTypes.bool.isRequired,
+    labelwidth: PropTypes.string.isRequired,
+    liveupdate: PropTypes.bool.isRequired,
     onUpdate: PropTypes.func.isRequired
   };
 
@@ -52,25 +52,25 @@ export default class DatPresets extends Component {
 
   handleChange = event => {
     const value = JSON.parse(event.target.value);
-    const { liveUpdate, onUpdate } = this.props;
+    const { liveupdate, onUpdate } = this.props;
 
-    if (liveUpdate) onUpdate(value);
+    if (liveupdate) onUpdate(value);
   };
 
   render() {
-    const { path, label, labelWidth, className, style } = this.props;
+    const { path, label, labelwidth, className, style } = this.props;
     const { options } = this.state;
     const labelText = isString(label) ? label : path;
 
     return (
       <li className={cx('cr', 'presets', className)} style={style}>
         <label>
-          <span className="label-text" style={{ width: labelWidth }}>
+          <span className="label-text" style={{ width: labelwidth }}>
             {labelText}
           </span>
           <select
             onChange={this.handleChange}
-            style={{ width: `calc(100% - ${labelWidth})` }}
+            style={{ width: `calc(100% - ${labelwidth})` }}
           >
             {options.map(preset => {
               return Object.keys(preset).map(key => {

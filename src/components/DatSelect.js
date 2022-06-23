@@ -13,10 +13,10 @@ export default class DatSelect extends Component {
     label: PropTypes.string,
     options: PropTypes.array.isRequired,
     optionLabels: PropTypes.array,
-    labelWidth: PropTypes.string.isRequired,
-    liveUpdate: PropTypes.bool.isRequired,
+    labelwidth: PropTypes.string.isRequired,
+    liveupdate: PropTypes.bool.isRequired,
     onUpdate: PropTypes.func,
-    _onUpdateValue: PropTypes.func.isRequired
+    _onupdatevalue: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -47,16 +47,16 @@ export default class DatSelect extends Component {
 
   handleChange = event => {
     const { value } = event.target;
-    const { liveUpdate, _onUpdateValue, onUpdate, path } = this.props;
-    _onUpdateValue(path, value);
-    if (liveUpdate) onUpdate(value);
+    const { liveupdate, _onupdatevalue, onUpdate, path } = this.props;
+    _onupdatevalue(path, value);
+    if (liveupdate) onUpdate(value);
   };
 
   render() {
     const {
       path,
       label,
-      labelWidth,
+      labelwidth,
       optionLabels,
       className,
       style
@@ -67,13 +67,13 @@ export default class DatSelect extends Component {
     return (
       <li className={cx('cr', 'select', className)} style={style}>
         <label>
-          <span className="label-text" style={{ width: labelWidth }}>
+          <span className="label-text" style={{ width: labelwidth }}>
             {labelText}
           </span>
           <select
             value={value}
             onChange={this.handleChange}
-            style={{ width: `calc(100% - ${labelWidth})` }}
+            style={{ width: `calc(100% - ${labelwidth})` }}
           >
             {options.map((item, index) => (
               // eslint-disable-next-line react/no-array-index-key

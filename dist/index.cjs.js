@@ -63,8 +63,8 @@ var DatString = /*#__PURE__*/function (_Component) {
 
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleChange", function (event) {
       var value = event.target.value;
-      var liveUpdate = _this.props.liveUpdate;
-      if (liveUpdate) _this.update(value);
+      var liveupdate = _this.props.liveupdate;
+      if (liveupdate) _this.update(value);
     });
 
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleFocus", function () {
@@ -74,14 +74,14 @@ var DatString = /*#__PURE__*/function (_Component) {
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleBlur", function () {
       document.removeEventListener('keydown', _this.handleKeyDown);
       window.getSelection().removeAllRanges();
-      var liveUpdate = _this.props.liveUpdate;
-      if (!liveUpdate) _this.update();
+      var liveupdate = _this.props.liveupdate;
+      if (!liveupdate) _this.update();
     });
 
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleKeyDown", function (event) {
       var key = event.keyCode || event.which;
-      var liveUpdate = _this.props.liveUpdate;
-      if (key === 13 && !liveUpdate) _this.update();
+      var liveupdate = _this.props.liveupdate;
+      if (key === 13 && !liveupdate) _this.update();
     });
 
     _this.state = {
@@ -94,11 +94,11 @@ var DatString = /*#__PURE__*/function (_Component) {
     key: "update",
     value: function update(value) {
       var _this$props = this.props,
-          _onUpdateValue = _this$props._onUpdateValue,
+          _onupdatevalue = _this$props._onupdatevalue,
           onUpdate = _this$props.onUpdate,
           path = _this$props.path;
 
-      _onUpdateValue(path, value);
+      _onupdatevalue(path, value);
 
       onUpdate(value);
     }
@@ -108,7 +108,7 @@ var DatString = /*#__PURE__*/function (_Component) {
       var _this$props2 = this.props,
           path = _this$props2.path,
           label = _this$props2.label,
-          labelWidth = _this$props2.labelWidth,
+          labelwidth = _this$props2.labelwidth,
           className = _this$props2.className,
           style = _this$props2.style;
       var labelText = isString__default['default'](label) ? label : path;
@@ -118,11 +118,11 @@ var DatString = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement("label", null, /*#__PURE__*/React__default['default'].createElement("span", {
         className: "label-text",
         style: {
-          width: labelWidth
+          width: labelwidth
         }
       }, labelText), /*#__PURE__*/React__default['default'].createElement("input", {
         style: {
-          width: "calc(100% - ".concat(labelWidth, ")")
+          width: "calc(100% - ".concat(labelwidth, ")")
         },
         type: "text",
         value: this.state.value,
@@ -368,10 +368,10 @@ var DatNumber = /*#__PURE__*/function (_Component) {
 
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "update", function (value) {
       var _this$props2 = _this.props,
-          _onUpdateValue = _this$props2._onUpdateValue,
+          _onupdatevalue = _this$props2._onupdatevalue,
           path = _this$props2.path;
 
-      _onUpdateValue(path, toNumber(value));
+      _onupdatevalue(path, toNumber(value));
     });
 
     _this.state = {
@@ -403,7 +403,7 @@ var DatNumber = /*#__PURE__*/function (_Component) {
           max = _this$props4.max,
           path = _this$props4.path,
           label = _this$props4.label,
-          labelWidth = _this$props4.labelWidth,
+          labelwidth = _this$props4.labelwidth,
           step = _this$props4.step,
           disableSlider = _this$props4.disableSlider,
           className = _this$props4.className,
@@ -419,12 +419,12 @@ var DatNumber = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement("label", null, /*#__PURE__*/React__default['default'].createElement("span", {
         className: "label-text",
         style: {
-          width: labelWidth
+          width: labelwidth
         }
       }, labelText), /*#__PURE__*/React__default['default'].createElement("span", {
         style: {
           display: 'inherit',
-          width: "calc(100% - ".concat(labelWidth, ")")
+          width: "calc(100% - ".concat(labelwidth, ")")
         }
       }, hasSlider && disableSlider !== true ? this.renderSlider(sliderWidth) : null, /*#__PURE__*/React__default['default'].createElement("input", {
         type: "number",
@@ -490,10 +490,10 @@ var DatBoolean = /*#__PURE__*/function (_Component) {
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleChange", function (event) {
       var value = event.target.checked;
       var _this$props = _this.props,
-          _onUpdateValue = _this$props._onUpdateValue,
+          _onupdatevalue = _this$props._onupdatevalue,
           path = _this$props.path;
 
-      _onUpdateValue(path, value);
+      _onupdatevalue(path, value);
     });
 
     _this.state = {
@@ -508,7 +508,7 @@ var DatBoolean = /*#__PURE__*/function (_Component) {
       var _this$props2 = this.props,
           path = _this$props2.path,
           label = _this$props2.label,
-          labelWidth = _this$props2.labelWidth,
+          labelwidth = _this$props2.labelwidth,
           className = _this$props2.className,
           style = _this$props2.style;
       var labelText = isString__default['default'](label) ? label : path;
@@ -518,12 +518,12 @@ var DatBoolean = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement("label", null, /*#__PURE__*/React__default['default'].createElement("span", {
         className: "label-text",
         style: {
-          width: labelWidth
+          width: labelwidth
         }
       }, labelText), /*#__PURE__*/React__default['default'].createElement("span", {
         className: "checkbox-container",
         style: {
-          width: "calc(100% - ".concat(labelWidth, ")")
+          width: "calc(100% - ".concat(labelwidth, ")")
         }
       }, /*#__PURE__*/React__default['default'].createElement("input", {
         type: "checkbox",
@@ -677,14 +677,14 @@ var DatSelect = /*#__PURE__*/function (_Component) {
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleChange", function (event) {
       var value = event.target.value;
       var _this$props = _this.props,
-          liveUpdate = _this$props.liveUpdate,
-          _onUpdateValue = _this$props._onUpdateValue,
+          liveupdate = _this$props.liveupdate,
+          _onupdatevalue = _this$props._onupdatevalue,
           onUpdate = _this$props.onUpdate,
           path = _this$props.path;
 
-      _onUpdateValue(path, value);
+      _onupdatevalue(path, value);
 
-      if (liveUpdate) onUpdate(value);
+      if (liveupdate) onUpdate(value);
     });
 
     _this.state = {
@@ -700,7 +700,7 @@ var DatSelect = /*#__PURE__*/function (_Component) {
       var _this$props2 = this.props,
           path = _this$props2.path,
           label = _this$props2.label,
-          labelWidth = _this$props2.labelWidth,
+          labelwidth = _this$props2.labelwidth,
           optionLabels = _this$props2.optionLabels,
           className = _this$props2.className,
           style = _this$props2.style;
@@ -714,13 +714,13 @@ var DatSelect = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement("label", null, /*#__PURE__*/React__default['default'].createElement("span", {
         className: "label-text",
         style: {
-          width: labelWidth
+          width: labelwidth
         }
       }, labelText), /*#__PURE__*/React__default['default'].createElement("select", {
         value: value,
         onChange: this.handleChange,
         style: {
-          width: "calc(100% - ".concat(labelWidth, ")")
+          width: "calc(100% - ".concat(labelwidth, ")")
         }
       }, options.map(function (item, index) {
         return (
@@ -903,10 +903,10 @@ var DatColor = /*#__PURE__*/function (_Component) {
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleChangeColor", function (color) {
       var value = isString__default['default'](color) ? color : color.hex;
       var _this$props = _this.props,
-          _onUpdateValue = _this$props._onUpdateValue,
+          _onupdatevalue = _this$props._onupdatevalue,
           path = _this$props.path;
 
-      _onUpdateValue(path, value);
+      _onupdatevalue(path, value);
     });
 
     _this.state = {
@@ -941,7 +941,7 @@ var DatColor = /*#__PURE__*/function (_Component) {
       var _this$props2 = this.props,
           path = _this$props2.path,
           label = _this$props2.label,
-          labelWidth = _this$props2.labelWidth,
+          labelwidth = _this$props2.labelwidth,
           className = _this$props2.className,
           style = _this$props2.style;
       var value = this.state.value;
@@ -954,12 +954,12 @@ var DatColor = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement("label", null, /*#__PURE__*/React__default['default'].createElement("span", {
         className: "label-text",
         style: {
-          width: labelWidth
+          width: labelwidth
         }
       }, labelText), /*#__PURE__*/React__default['default'].createElement("div", {
         style: {
           backgroundColor: value,
-          width: "calc(100% - ".concat(labelWidth, ")")
+          width: "calc(100% - ".concat(labelwidth, ")")
         }
       }, /*#__PURE__*/React__default['default'].createElement("div", {
         className: "swatch",
@@ -1009,9 +1009,9 @@ var DatPresets = /*#__PURE__*/function (_Component) {
     _defineProperty__default['default'](_assertThisInitialized__default['default'](_this), "handleChange", function (event) {
       var value = JSON.parse(event.target.value);
       var _this$props = _this.props,
-          liveUpdate = _this$props.liveUpdate,
+          liveupdate = _this$props.liveupdate,
           onUpdate = _this$props.onUpdate;
-      if (liveUpdate) onUpdate(value);
+      if (liveupdate) onUpdate(value);
     });
 
     _this.state = {
@@ -1027,7 +1027,7 @@ var DatPresets = /*#__PURE__*/function (_Component) {
       var _this$props2 = this.props,
           path = _this$props2.path,
           label = _this$props2.label,
-          labelWidth = _this$props2.labelWidth,
+          labelwidth = _this$props2.labelwidth,
           className = _this$props2.className,
           style = _this$props2.style;
       var options = this.state.options;
@@ -1038,12 +1038,12 @@ var DatPresets = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement("label", null, /*#__PURE__*/React__default['default'].createElement("span", {
         className: "label-text",
         style: {
-          width: labelWidth
+          width: labelwidth
         }
       }, labelText), /*#__PURE__*/React__default['default'].createElement("select", {
         onChange: this.handleChange,
         style: {
-          width: "calc(100% - ".concat(labelWidth, ")")
+          width: "calc(100% - ".concat(labelwidth, ")")
         }
       }, options.map(function (preset) {
         return Object.keys(preset).map(function (key) {
@@ -1117,14 +1117,14 @@ var DatGui = /*#__PURE__*/function (_Component) {
           children = _this$props2.children,
           data = _this$props2.data;
       return React__default['default'].Children.toArray(children).map(function (child, i) {
-        var liveUpdate = isUndefined__default['default'](child.props.liveUpdate) ? _this2.props.liveUpdate : child.props.liveUpdate;
-        var labelWidth = isUndefined__default['default'](child.props.labelWidth) ? _this2.props.labelWidth : child.props.labelWidth;
+        var liveupdate = isUndefined__default['default'](child.props.liveupdate) ? _this2.props.liveupdate : child.props.liveupdate;
+        var labelwidth = isUndefined__default['default'](child.props.labelwidth) ? _this2.props.labelwidth : child.props.labelwidth;
         return /*#__PURE__*/React.cloneElement(child, {
           key: i,
           data: data,
-          liveUpdate: liveUpdate,
-          labelWidth: labelWidth,
-          _onUpdateValue: _this2.handleUpdateValue
+          liveupdate: liveupdate,
+          labelwidth: labelwidth,
+          _onupdatevalue: _this2.handleUpdateValue
         });
       });
     }
@@ -1148,10 +1148,10 @@ var DatGui = /*#__PURE__*/function (_Component) {
 }(React.Component);
 
 _defineProperty__default['default'](DatGui, "defaultProps", {
-  liveUpdate: true,
+  liveupdate: true,
   className: null,
   style: null,
-  labelWidth: '40%'
+  labelwidth: '40%'
 });
 
 exports.DatBoolean = DatBoolean;

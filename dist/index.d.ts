@@ -16,11 +16,11 @@ export interface DatGuiProps {
   /**
    * Determines if live updates should occur, defaults to true
    */
-  liveUpdate?: boolean;
+  liveupdate?: boolean;
   /**
    * The width of the labels in pixels, defaults to 40
    */
-  labelWidth?: number;
+  labelwidth?: number;
   /**
    * The class name to set on the DatGui div
    */

@@ -11,10 +11,10 @@ export default class DatString extends Component {
     data: PropTypes.object.isRequired,
     path: PropTypes.string,
     label: PropTypes.string,
-    labelWidth: PropTypes.string.isRequired,
-    liveUpdate: PropTypes.bool.isRequired,
+    labelwidth: PropTypes.string.isRequired,
+    liveupdate: PropTypes.bool.isRequired,
     onUpdate: PropTypes.func,
-    _onUpdateValue: PropTypes.func.isRequired
+    _onupdatevalue: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -44,9 +44,9 @@ export default class DatString extends Component {
 
   handleChange = event => {
     const { value } = event.target;
-    const { liveUpdate } = this.props;
+    const { liveupdate } = this.props;
 
-    if (liveUpdate) this.update(value);
+    if (liveupdate) this.update(value);
   };
 
   handleFocus = () => {
@@ -57,35 +57,35 @@ export default class DatString extends Component {
     document.removeEventListener('keydown', this.handleKeyDown);
     window.getSelection().removeAllRanges();
 
-    const { liveUpdate } = this.props;
-    if (!liveUpdate) this.update();
+    const { liveupdate } = this.props;
+    if (!liveupdate) this.update();
   };
 
   handleKeyDown = event => {
     const key = event.keyCode || event.which;
-    const { liveUpdate } = this.props;
+    const { liveupdate } = this.props;
 
-    if (key === 13 && !liveUpdate) this.update();
+    if (key === 13 && !liveupdate) this.update();
   };
 
   update(value) {
-    const { _onUpdateValue, onUpdate, path } = this.props;
-    _onUpdateValue(path, value);
+    const { _onupdatevalue, onUpdate, path } = this.props;
+    _onupdatevalue(path, value);
     onUpdate(value);
   }
 
   render() {
-    const { path, label, labelWidth, className, style } = this.props;
+    const { path, label, labelwidth, className, style } = this.props;
     const labelText = isString(label) ? label : path;
 
     return (
       <li className={cx('cr', 'string', className)} style={style}>
         <label>
-          <span className="label-text" style={{ width: labelWidth }}>
+          <span className="label-text" style={{ width: labelwidth }}>
             {labelText}
           </span>
           <input
-            style={{ width: `calc(100% - ${labelWidth})` }}
+            style={{ width: `calc(100% - ${labelwidth})` }}
             type="text"
             value={this.state.value}
             onChange={this.handleChange}

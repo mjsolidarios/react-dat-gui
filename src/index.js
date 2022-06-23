@@ -11,17 +11,17 @@ export default class DatGui extends Component {
     data: PropTypes.object.isRequired,
     children: PropTypes.node.isRequired,
     onUpdate: PropTypes.func.isRequired,
-    liveUpdate: PropTypes.bool,
-    labelWidth: PropTypes.string,
+    liveupdate: PropTypes.bool,
+    labelwidth: PropTypes.string,
     className: PropTypes.string,
     style: PropTypes.object
   };
 
   static defaultProps = {
-    liveUpdate: true,
+    liveupdate: true,
     className: null,
     style: null,
-    labelWidth: '40%'
+    labelwidth: '40%'
   };
 
   handleUpdateValue = (path, value) => {
@@ -35,19 +35,19 @@ export default class DatGui extends Component {
     const { children, data } = this.props;
 
     return React.Children.toArray(children).map((child, i) => {
-      const liveUpdate = isUndefined(child.props.liveUpdate)
-        ? this.props.liveUpdate
-        : child.props.liveUpdate;
-      const labelWidth = isUndefined(child.props.labelWidth)
-        ? this.props.labelWidth
-        : child.props.labelWidth;
+      const liveupdate = isUndefined(child.props.liveupdate)
+        ? this.props.liveupdate
+        : child.props.liveupdate;
+      const labelwidth = isUndefined(child.props.labelwidth)
+        ? this.props.labelwidth
+        : child.props.labelwidth;
 
       return cloneElement(child, {
         key: i,
         data,
-        liveUpdate,
-        labelWidth,
-        _onUpdateValue: this.handleUpdateValue
+        liveupdate,
+        labelwidth,
+        _onupdatevalue: this.handleUpdateValue
       });
     });
   }

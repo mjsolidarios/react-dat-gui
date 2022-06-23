@@ -49,8 +49,8 @@ export default class DatNumber extends Component {
     data: PropTypes.object.isRequired,
     path: PropTypes.string,
     label: PropTypes.string,
-    labelWidth: PropTypes.string.isRequired,
-    _onUpdateValue: PropTypes.func.isRequired,
+    labelwidth: PropTypes.string.isRequired,
+    _onupdatevalue: PropTypes.func.isRequired,
     disableSlider: PropTypes.bool
   };
 
@@ -96,9 +96,9 @@ export default class DatNumber extends Component {
   };
 
   update = value => {
-    const { _onUpdateValue, path } = this.props;
+    const { _onupdatevalue, path } = this.props;
 
-    _onUpdateValue(path, toNumber(value));
+    _onupdatevalue(path, toNumber(value));
   };
 
   renderSlider(width) {
@@ -122,7 +122,7 @@ export default class DatNumber extends Component {
       max,
       path,
       label,
-      labelWidth,
+      labelwidth,
       step,
       disableSlider,
       className,
@@ -140,11 +140,11 @@ export default class DatNumber extends Component {
     return (
       <li className={cx('cr', 'number', className)} style={style}>
         <label>
-          <span className="label-text" style={{ width: labelWidth }}>
+          <span className="label-text" style={{ width: labelwidth }}>
             {labelText}
           </span>
           <span
-            style={{ display: 'inherit', width: `calc(100% - ${labelWidth})` }}
+            style={{ display: 'inherit', width: `calc(100% - ${labelwidth})` }}
           >
             {hasSlider && disableSlider !== true
               ? this.renderSlider(sliderWidth)

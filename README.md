@@ -91,8 +91,8 @@ This is the main container component for your GUI and is the default export from
 
 | prop       | Description                                    | Type    | Default |
 | ---------- | ---------------------------------------------- | ------- | ------- |
-| liveUpdate | Determines if live updates should occur        | boolean | true    |
-| labelWidth | The width of the labels in any valid CSS units | string  | "40%"   |
+| liveupdate | Determines if live updates should occur        | boolean | true    |
+| labelwidth | The width of the labels in any valid CSS units | string  | "40%"   |
 | className  | The class name to set on the `DatGui` div      | string  | null    |
 | style      | The style object to set on the `DatGui` div    | object  | null    |
 
@@ -117,9 +117,9 @@ All child components of `<DatGui />` receive the following props implicitly, the
 | prop            | Description                                                                                                                          | Type    |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | data            | The data your dat.GUI controller will mutate, the same object from `<DatGui data={data} /> | object                                  |
-| labelWidth      | The width of the control name label                                                                                                  | string  |
-| liveUpdate      | Determines if live updates should occur                                                                                              | boolean |
-| \_onUpdateValue | A callback function for `<DatGui onUpdate={this.onUpdate} />, call this method to update dat.Gui state from your control. | function |
+| labelwidth      | The width of the control name label                                                                                                  | string  |
+| liveupdate      | Determines if live updates should occur                                                                                              | boolean |
+| \_onupdatevalue | A callback function for `<DatGui onUpdate={this.onUpdate} />, call this method to update dat.Gui state from your control. | function |
 
 Below are docs for the required and optional props you can pass to each built-in control component.
 
@@ -136,7 +136,7 @@ Below are docs for the required and optional props you can pass to each built-in
 - `className: string` - A CSS class name
 - `style: object` - A style object for inline styles
 - `label: string` - The label for the controller eg., `<DatString path='message' label='Message' />`
-- `labelWidth: string` - The width of the labels in any valid CSS units, overrides `<DatGUI labelWidth>`
+- `labelwidth: string` - The width of the labels in any valid CSS units, overrides `<DatGUI labelwidth>`
 
 #### `DatBoolean`
 
